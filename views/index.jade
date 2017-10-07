@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  .main
+    .header
+      h2 this is a websocket online chat ...
+    .content
+      .msg-box
+        .box-left
+          .chat-name
+            span wjt
+          .chat-type
+            ul.chat-list
+              - var attributes = ['前端工程师', 'java工程师', '大数据工程师', 'nodejs', 'PHP工程师'];
+              - for(var i = 0, len = attributes.length; i<len; i++)
+                li.list-item <span>#{attributes[i]}</span>
+        .box-content
+          .msg-content
+            .add-leave
+            .receive-msg
+          .msg-input-box
+            .msg-input
+              input(type="text")
+            .msg-btn
+              button.msg-send.btn-primary 发送
+        .box-right
+          fieldset
+            legend
+              .total-list
+                .list-title 人员列表
+                .list-detail
+                  span (23/40)
+            ul.person-list
+              li.list-item <span>wjt</span>
+    .footer
+  script(src='/javascripts/jquery.min.js')
+  script(src='/javascripts/socket.io.js')
+  script(src='/javascripts/main.js')
