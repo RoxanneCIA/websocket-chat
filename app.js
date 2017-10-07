@@ -69,7 +69,6 @@ io.on('connection', function(socket){
       obj['text'] = client.name;
       obj['author'] = 'Addorleave';
       obj['type'] = 'bye';
-      console.log(client.name + ' leave')
 
       socket.emit('addorleave', obj)
       socket.broadcast.emit('addorleave', obj);
